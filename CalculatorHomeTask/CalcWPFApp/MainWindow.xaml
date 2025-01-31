@@ -1,0 +1,148 @@
+﻿<Window x:Class="CalcWPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalcWPFApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="500">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label 
+            x:Name="resultLabel"
+            Content="0" 
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="4" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Bottom"
+            FontSize="60"
+            FontWeight="Bold"/>
+        <Button 
+            Content="C" 
+            Click="OperationButton_Click"
+            Style="{StaticResource OperationButtonStyle}"
+            Grid.Row="1"/>
+        <Button 
+            Content="+/-" 
+            Click="OperationButton_Click"
+            Style="{StaticResource OperationButtonStyle}"
+            Grid.Row="1"
+            Grid.Column="1"/>
+        <Button 
+            Content="%" 
+            Style="{StaticResource OperationButtonStyle}"
+            Grid.Row="1"
+            Grid.Column="2"/>
+        <Button 
+            Content="/" 
+            Click="OperationButton_Click"
+            Style="{StaticResource OperationButtonStyle}"
+            Grid.Row="1"
+            Grid.Column="3"/>
+        <Button 
+            Content="7" 
+            Style="{StaticResource NumberButtonStyle}"
+            Click="NumberButton_Click"
+            Grid.Row="2"
+            Grid.Column="0"/>
+        <Button 
+            Content="8" 
+            Click="NumberButton_Click"
+            Style="{StaticResource NumberButtonStyle}"
+            Grid.Row="2"
+            Grid.Column="1"/>
+        <Button 
+            Content="9" 
+            Click="NumberButton_Click"
+            Style="{StaticResource NumberButtonStyle}"
+            Grid.Row="2"
+            Grid.Column="2"/>
+        <Button 
+            Style="{StaticResource OperationButtonStyle}"
+            Content="X" 
+            Grid.Row="2"
+            Grid.Column="3"/>
+        <Button 
+            Content="4" 
+            Click="NumberButton_Click"
+            Style="{StaticResource NumberButtonStyle}"
+            Grid.Row="3"
+            Grid.Column="0"/>   
+        <Button 
+            Content="5" 
+            Click="NumberButton_Click"
+            Style="{StaticResource NumberButtonStyle}"
+            Grid.Row="3"
+            Grid.Column="1"/>
+        <Button 
+            Content="6" 
+            Click="NumberButton_Click"
+            Style="{StaticResource NumberButtonStyle}"
+            Grid.Row="3"
+            Grid.Column="2"/>
+        <Button 
+            Content="-" 
+            Style="{StaticResource OperationButtonStyle}"
+            Grid.Row="3"
+            Grid.Column="3"/>
+        <Button 
+            Content="1" 
+            Click="NumberButton_Click"
+            Grid.Row="4"
+            Style="{StaticResource NumberButtonStyle}"
+            Grid.Column="0"/>
+        <Button 
+            Content="2" 
+            Click="NumberButton_Click"
+            Style="{StaticResource NumberButtonStyle}"
+            Grid.Row="4"
+            Grid.Column="1"/>
+        <Button 
+            Content="3" 
+            Click="NumberButton_Click"
+            Style="{StaticResource NumberButtonStyle}"
+            Grid.Row="4"
+            Grid.Column="2"/>   
+        <Button 
+            Style="{StaticResource OperationButtonStyle}"
+            Content="+" 
+            Click="OperationButton_Click"
+            Grid.Row="4"
+            Grid.Column="3"/>
+        <Button 
+            Content="0" 
+            Click="NumberButton_Click"
+            Style="{StaticResource NumberButtonStyle}"
+            Grid.Row="5"
+            Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Button 
+            Content="." 
+            Style="{StaticResource OperationButtonStyle}"
+            Click="NumberButton_Click"
+            Grid.Row="5"
+            Grid.Column="2"/>
+        <Button 
+            Content="=" 
+            Style="{StaticResource OperationButtonStyle}"
+            Click="OperationButton_Click"
+            Grid.Row="5"
+            Grid.Column="3"/>
+        
+    </Grid>
+    
+</Window>
