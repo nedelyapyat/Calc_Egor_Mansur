@@ -85,6 +85,10 @@ namespace CalcWPFApp
                     _operation = Operations.Multiply;
                     ChangePreviousNumber();
                     break;
+                case "%": // Новый случай для процента
+                    _operation = Operations.Percentage;
+                    ChangePreviousNumber();
+                    break;
             }
         }
 
@@ -121,6 +125,7 @@ namespace CalcWPFApp
                     res = MathOperations.Multiply(_previousNumber, current);
                     UpdateUI(res);
                     break;
+              
             }
         }
 
