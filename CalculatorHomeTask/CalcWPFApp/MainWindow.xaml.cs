@@ -102,22 +102,22 @@ namespace CalcWPFApp
                 case Operations.None:
                     break;
                 case Operations.Add:
-                    var currentNumber = Convert.ToDouble(resultLabel.Content);
+                    var currentNumber = Convert.ToDouble(resultLabel.Content, CultureInfo.InvariantCulture);
                     var result = MathOperations.Sum(_previousNumber, currentNumber);
                     UpdateUI(result);
                     break;
                 case Operations.Subtract:
-                    var current = Convert.ToDouble(resultLabel.Content);
+                    var current = Convert.ToDouble(resultLabel.Content, CultureInfo.InvariantCulture);
                     var res = MathOperations.Substract(_previousNumber, current);
                     UpdateUI(res);
                     break;
                 case Operations.Divide:
-                    current = Convert.ToDouble(resultLabel.Content);
+                    current = Convert.ToDouble(resultLabel.Content, CultureInfo.InvariantCulture);
                     res = MathOperations.Divide(_previousNumber, current);
                     UpdateUI(res);
                     break;
                 case Operations.Multiply:
-                    current = Convert.ToDouble(resultLabel.Content);
+                    current = Convert.ToDouble(resultLabel.Content, CultureInfo.InvariantCulture);
                     res = MathOperations.Multiply(_previousNumber, current);
                     UpdateUI(res);
                     break;
