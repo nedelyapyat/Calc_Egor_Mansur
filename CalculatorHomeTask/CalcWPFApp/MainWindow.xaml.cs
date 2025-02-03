@@ -85,6 +85,7 @@ namespace CalcWPFApp
 
         private void ChangePreviousNumber()
         {
+            
             _previousNumber = Convert.ToDouble(resultLabel.Content);
             resultLabel.Content = "0";
         }
