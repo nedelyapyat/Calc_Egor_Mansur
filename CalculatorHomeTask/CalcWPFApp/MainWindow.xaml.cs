@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -89,8 +90,8 @@ namespace CalcWPFApp
 
         private void ChangePreviousNumber()
         {
-            
-            _previousNumber = Convert.ToDouble(resultLabel.Content);
+
+            _previousNumber = Convert.ToDouble(resultLabel.Content.ToString(), CultureInfo.InvariantCulture);
             resultLabel.Content = "0";
         }
 
@@ -125,7 +126,7 @@ namespace CalcWPFApp
 
         private void SwitchSign()
         {
-            double number = Convert.ToDouble(resultLabel.Content.ToString());
+            double number = Convert.ToDouble(resultLabel.Content.ToString(), CultureInfo.InvariantCulture);
             number *= -1;
             resultLabel.Content = number.ToString();
         }
