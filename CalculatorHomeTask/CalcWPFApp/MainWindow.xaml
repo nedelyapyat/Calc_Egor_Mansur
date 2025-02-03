@@ -21,6 +21,7 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Label 
             x:Name="resultLabel"
@@ -33,114 +34,126 @@
             FontSize="60"
             FontWeight="Bold"/>
         <Button 
+            Content="x²"
+            Click="OperationButton_Click"
+            Style="{StaticResource OperationButtonStyle}"
+            Grid.Row="1"
+            Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Button 
+            Content="√"
+            Click="OperationButton_Click"
+            Style="{StaticResource OperationButtonStyle}"
+            Grid.Row="1"
+            Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Button 
             Content="C" 
             Click="OperationButton_Click"
             Style="{StaticResource OperationButtonStyle}"
-            Grid.Row="1"/>
+            Grid.Row="2"/>
         <Button 
             Content="+/-" 
             Click="OperationButton_Click"
             Style="{StaticResource OperationButtonStyle}"
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="1"/>
         <Button 
             Content="%" 
             Style="{StaticResource OperationButtonStyle}"
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="2"/>
         <Button 
             Content="/" 
             Click="OperationButton_Click"
             Style="{StaticResource OperationButtonStyle}"
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="3"/>
         <Button 
             Content="7" 
             Style="{StaticResource NumberButtonStyle}"
             Click="NumberButton_Click"
-            Grid.Row="2"
+            Grid.Row="3"
             Grid.Column="0"/>
         <Button 
             Content="8" 
             Click="NumberButton_Click"
             Style="{StaticResource NumberButtonStyle}"
-            Grid.Row="2"
+            Grid.Row="3"
             Grid.Column="1"/>
         <Button 
             Content="9" 
             Click="NumberButton_Click"
             Style="{StaticResource NumberButtonStyle}"
-            Grid.Row="2"
+            Grid.Row="3"
             Grid.Column="2"/>
         <Button 
             Style="{StaticResource OperationButtonStyle}"
             Content="X" 
-            Grid.Row="2"
+            Grid.Row="3"
             Grid.Column="3"/>
         <Button 
             Content="4" 
             Click="NumberButton_Click"
             Style="{StaticResource NumberButtonStyle}"
-            Grid.Row="3"
+            Grid.Row="4"
             Grid.Column="0"/>   
         <Button 
             Content="5" 
             Click="NumberButton_Click"
             Style="{StaticResource NumberButtonStyle}"
-            Grid.Row="3"
+            Grid.Row="4"
             Grid.Column="1"/>
         <Button 
             Content="6" 
             Click="NumberButton_Click"
             Style="{StaticResource NumberButtonStyle}"
-            Grid.Row="3"
+            Grid.Row="4"
             Grid.Column="2"/>
         <Button 
             Content="-" 
             Style="{StaticResource OperationButtonStyle}"
-            Grid.Row="3"
+            Grid.Row="4"
             Grid.Column="3"/>
         <Button 
             Content="1" 
             Click="NumberButton_Click"
-            Grid.Row="4"
+            Grid.Row="5"
             Style="{StaticResource NumberButtonStyle}"
             Grid.Column="0"/>
         <Button 
             Content="2" 
             Click="NumberButton_Click"
             Style="{StaticResource NumberButtonStyle}"
-            Grid.Row="4"
+            Grid.Row="5"
             Grid.Column="1"/>
         <Button 
             Content="3" 
             Click="NumberButton_Click"
             Style="{StaticResource NumberButtonStyle}"
-            Grid.Row="4"
+            Grid.Row="5"
             Grid.Column="2"/>   
         <Button 
             Style="{StaticResource OperationButtonStyle}"
             Content="+" 
             Click="OperationButton_Click"
-            Grid.Row="4"
+            Grid.Row="5"
             Grid.Column="3"/>
         <Button 
             Content="0" 
             Click="NumberButton_Click"
             Style="{StaticResource NumberButtonStyle}"
-            Grid.Row="5"
+            Grid.Row="6"
             Grid.Column="0" Grid.ColumnSpan="2"/>
         <Button 
             Content="." 
             Style="{StaticResource OperationButtonStyle}"
             Click="NumberButton_Click"
-            Grid.Row="5"
+            Grid.Row="6"
             Grid.Column="2"/>
         <Button 
             Content="=" 
             Style="{StaticResource OperationButtonStyle}"
             Click="OperationButton_Click"
-            Grid.Row="5"
+            Grid.Row="6"
             Grid.Column="3"/>
         
     </Grid>

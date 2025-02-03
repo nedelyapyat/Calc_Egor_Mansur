@@ -76,6 +76,9 @@ namespace CalcWPFApp
                 case "=":
                     Calculate();
                     break;
+                case "x":
+                    Calculate();
+                    break;
             }
         }
 

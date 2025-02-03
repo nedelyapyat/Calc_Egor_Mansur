@@ -27,5 +27,14 @@ namespace CalcWPFApp
             var res = a / b;
             return res.ToString();
         }
+        public static string Multiply(double a, double b)
+        {
+            if (b == 0)
+            {
+                return "0";
+            }
+            var res = a * b;
+            return res.ToString();
+        }
     }
 }
