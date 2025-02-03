@@ -65,6 +65,10 @@ namespace CalcWPFApp
                 case "+/-":
                     SwitchSign();
                     break;
+                case "-":
+                    _operation = Operations.Subtract;
+                    ChangePreviousNumber();
+                    break;
                 case "+":
                     _operation = Operations.Add;
                     ChangePreviousNumber();
@@ -102,10 +106,13 @@ namespace CalcWPFApp
                     UpdateUI(result);
                     break;
                 case Operations.Subtract:
+                    var current = Convert.ToDouble(resultLabel.Content);
+                    var res = MathOperations.Substract(_previousNumber, current);
+                    UpdateUI(res);
                     break;
                 case Operations.Divide:
-                    var current = Convert.ToDouble(resultLabel.Content);
-                    var res = MathOperations.Divide(_previousNumber, current);
+                    current = Convert.ToDouble(resultLabel.Content);
+                    res = MathOperations.Divide(_previousNumber, current);
                     UpdateUI(res);
                     break;
                 case Operations.Multiply:
