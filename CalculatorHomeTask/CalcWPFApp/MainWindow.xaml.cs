@@ -76,8 +76,9 @@ namespace CalcWPFApp
                 case "=":
                     Calculate();
                     break;
-                case "x":
-                    Calculate();
+                case "X":
+                    _operation = Operations.Multiply;
+                    ChangePreviousNumber();
                     break;
             }
         }
@@ -107,6 +108,9 @@ namespace CalcWPFApp
                     UpdateUI(res);
                     break;
                 case Operations.Multiply:
+                    current = Convert.ToDouble(resultLabel.Content);
+                    res = MathOperations.Multiply(_previousNumber, current);
+                    UpdateUI(res);
                     break;
             }
         }
