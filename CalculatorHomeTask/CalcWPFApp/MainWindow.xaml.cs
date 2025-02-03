@@ -85,22 +85,23 @@ namespace CalcWPFApp
                     _operation = Operations.Multiply;
                     ChangePreviousNumber();
                     break;
-                case "%": // Новый случай для процента
-                    _operation = Operations.Percentage;
-                    ChangePreviousNumber();
+                case "%":
+                    CalculatePercentage();
                     break;
+
             }
         }
 
         private void ChangePreviousNumber()
         {
-
             _previousNumber = Convert.ToDouble(resultLabel.Content.ToString(), CultureInfo.InvariantCulture);
             resultLabel.Content = "0";
         }
 
         private void Calculate()
         {
+            string content = resultLabel.Content.ToString().Replace("%", "");
+            double numericContent = Convert.ToDouble(content, CultureInfo.InvariantCulture);
             switch (_operation)
             {
                 case Operations.None:
@@ -125,13 +126,25 @@ namespace CalcWPFApp
                     res = MathOperations.Multiply(_previousNumber, current);
                     UpdateUI(res);
                     break;
-              
+                
             }
         }
 
+        private void CalculatePercentage()
+        {
+            if (!resultLabel.Content.ToString().Contains("%"))
+            {
+                double currentNumber = Convert.ToDouble(resultLabel.Content.ToString().Replace("%", ""), CultureInfo.InvariantCulture);
+                double percentage = _previousNumber * (currentNumber / 100.0);
+                resultLabel.Content = percentage.ToString(CultureInfo.InvariantCulture) + "%";
+            }
+        }
+
+
+
         private void SwitchSign()
         {
-            double number = Convert.ToDouble(resultLabel.Content.ToString(), CultureInfo.InvariantCulture);
+            double number = Convert.ToDouble(resultLabel.Content.ToString().Replace("%", ""), CultureInfo.InvariantCulture);
             number *= -1;
             resultLabel.Content = number.ToString();
         }
