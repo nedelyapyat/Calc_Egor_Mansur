@@ -13,6 +13,7 @@ namespace CalcWPFApp
         Subtract,
         Divide,
         Multiply,
+        Percent,
         Root,
         Degree
     }
