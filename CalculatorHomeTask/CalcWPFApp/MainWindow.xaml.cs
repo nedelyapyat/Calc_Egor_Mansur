@@ -88,6 +88,13 @@ namespace CalcWPFApp
                 case "%":
                     CalculatePercentage();
                     break;
+                case "x²":
+                    CalculateSquare();
+                    break;
+                case "√": 
+                    CalculateSquareRoot();
+                    break;
+
 
             }
         }
@@ -129,6 +136,43 @@ namespace CalcWPFApp
                 
             }
         }
+
+        private void CalculateSquareRoot()
+        {
+            if (resultLabel.Content == null || string.IsNullOrWhiteSpace(resultLabel.Content.ToString()))
+                return;
+
+            if (!double.TryParse(resultLabel.Content.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out double number))
+            {
+                MessageBox.Show("Ошибка: некорректное число", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (number < 0)
+            {
+                MessageBox.Show("Ошибка: нельзя вычислить корень из отрицательного числа!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            double squareRoot = Math.Sqrt(number); // Вычисляем квадратный корень
+            resultLabel.Content = squareRoot.ToString(CultureInfo.InvariantCulture);
+        }
+
+        private void CalculateSquare()
+        {
+            if (resultLabel.Content == null || string.IsNullOrWhiteSpace(resultLabel.Content.ToString()))
+                return;
+
+            if (!double.TryParse(resultLabel.Content.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out double number))
+            {
+                MessageBox.Show("Ошибка: некорректное число", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            double squaredValue = Math.Pow(number, 2); // Возводим в квадрат
+            resultLabel.Content = squaredValue.ToString(CultureInfo.InvariantCulture);
+        }
+
 
         private void CalculatePercentage()
         {
