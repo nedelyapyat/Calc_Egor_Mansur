@@ -107,7 +107,7 @@ namespace CalcWPFApp
 
         private void Calculate()
         {
-            string content = resultLabel.Content.ToString().Replace("%", "");
+            string content = resultLabel.Content.ToString();
             double numericContent = Convert.ToDouble(content, CultureInfo.InvariantCulture);
             switch (_operation)
             {
@@ -133,6 +133,7 @@ namespace CalcWPFApp
                     res = MathOperations.Multiply(_previousNumber, current);
                     UpdateUI(res);
                     break;
+
                 
             }
         }
@@ -176,19 +177,22 @@ namespace CalcWPFApp
 
         private void CalculatePercentage()
         {
-            if (!resultLabel.Content.ToString().Contains("%"))
+            if (resultLabel.Content == null || string.IsNullOrWhiteSpace(resultLabel.Content.ToString()))
+                return;
+
+            if (!double.TryParse(resultLabel.Content.ToString(), NumberStyles.Any, CultureInfo.InvariantCulture, out double currentNumber))
             {
-                double currentNumber = Convert.ToDouble(resultLabel.Content.ToString().Replace("%", ""), CultureInfo.InvariantCulture);
-                double percentage = _previousNumber * (currentNumber / 100.0);
-                resultLabel.Content = percentage.ToString(CultureInfo.InvariantCulture) + "%";
+                MessageBox.Show("Ошибка: некорректное число", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
+
+            // Сохраняем текущий номер в процентном виде, но не обновляем UI
+            currentNumber = currentNumber / 100.0;
         }
-
-
 
         private void SwitchSign()
         {
-            double number = Convert.ToDouble(resultLabel.Content.ToString().Replace("%", ""), CultureInfo.InvariantCulture);
+            double number = Convert.ToDouble(resultLabel.Content.ToString(), CultureInfo.InvariantCulture);
             number *= -1;
             resultLabel.Content = number.ToString();
         }
