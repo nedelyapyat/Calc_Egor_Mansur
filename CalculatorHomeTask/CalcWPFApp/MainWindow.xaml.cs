@@ -186,9 +186,10 @@ namespace CalcWPFApp
                 return;
             }
 
-            // Сохраняем текущий номер в процентном виде, но не обновляем UI
+            // Изменяем переменную _currentNumber, чтобы сохранить значение в процентном виде
             currentNumber = currentNumber / 100.0;
         }
+
 
         private void SwitchSign()
         {
